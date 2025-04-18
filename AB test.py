@@ -175,9 +175,33 @@ st.markdown("""
             margin-bottom: 15px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        /* Increase font size for radio options */
-        .stRadio > label {
-            font-size: 25px !important;
+        /* Style for radio button option labels (background and text) */
+        .stRadio > div > label,
+        .stRadio > div > div > label,
+        [data-testid="stRadio"] label {
+            background-color: #800000 !important; /* Maroon background for visibility */
+            color: #F5E6E8 !important; /* Light pink text for contrast */
+            font-size: 18px !important; /* Consistent font size */
+            padding: 5px 10px !important; /* Padding for better appearance */
+            border-radius: 5px !important; /* Rounded corners for a polished look */
+            margin: 5px 0 !important; /* Spacing between options */
+        }
+        /* Style for the radio button circle */
+        .stRadio > div > label > input[type="radio"],
+        [data-testid="stRadio"] input[type="radio"] {
+            accent-color: #800000 !important; /* Maroon for checked radio button */
+            border-color: #800000 !important; /* Maroon border for unchecked */
+            margin-right: 10px !important; /* Space between circle and text */
+        }
+        /* Style for unchecked radio button border */
+        .stRadio > div > label > input[type="radio"]::before,
+        [data-testid="stRadio"] input[type="radio"]::before {
+            border: 2px solid #800000 !important; /* Maroon border for unchecked */
+        }
+        /* Style for checked radio button fill */
+        .stRadio > div > label > input[type="radio"]:checked::before,
+        [data-testid="stRadio"] input[type="radio"]:checked::before {
+            background-color: #800000 !important; /* Maroon fill for checked */
         }
     </style>
 """, unsafe_allow_html=True)
